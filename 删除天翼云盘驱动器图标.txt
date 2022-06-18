@@ -1,2 +1,0 @@
-计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
-删除NameSpace里面的键值“{A919F047-28EA-4F32-98EB-5C280FC9EB76}”
