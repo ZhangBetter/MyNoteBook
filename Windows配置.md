@@ -14,14 +14,14 @@
     * ### *天翼云盘*
         1. 打开注册表编辑器  
             `Win+R: regedit`
-        2. 路径
+        2. 路径  
             `\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\`
         3. 删除项  
             `{A919F047-28EA-4F32-98EB-5C280FC9EB76}`  
     * ### *iCloud云盘*
         1. 打开注册表编辑器  
             `Win+R: regedit`
-        2. 路径
+        2. 路径  
             `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\`
         3. 删除项  
             `{F0D63F85-37EC-4097-B30D-61B4A8917118}`
