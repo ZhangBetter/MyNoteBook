@@ -1,4 +1,0 @@
-添加以下注册表项：
-计算机\HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}
-恢复方法：
-删除{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}

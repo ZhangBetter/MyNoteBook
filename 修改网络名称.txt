@@ -1,2 +1,0 @@
-注册表位置：\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
-编辑ProfileName
