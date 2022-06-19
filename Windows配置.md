@@ -37,6 +37,17 @@
             `{9f156763-7844-4dc4-b2b1-901f640f5155}`  
 ***
 * ## 添加需要的右键菜单
+    * ### *Markdown 源文件*
+        1. 打开注册表编辑器  
+            `Win+R: regedit`
+        2. 路径  
+            `\HKEY_CLASSES_ROOT\.md\`
+        3. 修改项  
+            `将 .md 项右侧默认字符串的数据改为MD文件的默认打开方式（例如：VSCode.md 或者 Typora.md）`
+        4. 右键 *.md* 新建项  
+            `ShellNew`
+        5. 右键 *ShellNew* 新建字符串值  
+            `NullFile`
 ***
 * ## 修改右键菜单样式
     > 将 Windows 11 的右键菜单修改为 Windows 10 样式以及恢复方法  
