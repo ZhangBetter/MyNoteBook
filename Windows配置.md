@@ -52,14 +52,20 @@
 * ## 修改右键菜单样式
     > 将 Windows 11 的右键菜单修改为 Windows 10 样式以及恢复方法  
 
-    1. 打开注册表编辑器  
-        `Win+R: regedit`
-    2. 路径  
-        `\HKEY_CURRENT_USER\Software\Classes\CLSID\`
-    3. 添加项  
-        `{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}`
-    4. 恢复方法  
-        `删除项 {86ca1aa0-34aa-4e8b-a509-50c905bae2a2}`
+    * 手动修改
+        1. 打开注册表编辑器  
+            `Win+R: regedit`
+        2. 路径  
+            `\HKEY_CURRENT_USER\Software\Classes\CLSID\`
+        3. 添加项  
+            `{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}`
+        4. 恢复方法  
+            `删除项 {86ca1aa0-34aa-4e8b-a509-50c905bae2a2}`
+    * 命令修改  
+        1. 添加注册表修改为旧版右键菜单  
+            `reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve`
+        2. 删除注册表恢复为新版右键菜单  
+            `reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /va /f`
 ***
 * ## 修改网络名称
     > 修改本机所连接的所有网络的显示名称
@@ -78,19 +84,19 @@
             `运行命令：jupyter notebook --generate-config`  
         2. 根据运行结果中的提示在文件资源管理器中找到 *jupyter_notebook_config.py*，打开该文件后 *Ctrl+F* 搜索 *c.NotebookApp.notebook_dir* 变量，删除注释#符号，并设置工作路径即可。  
     * ### 设置Python2，Python3双内核
-        1. 开始菜单点击 *Anaconda PowerShell Prompt*  
-        2. 查询安装信息  
+        3. 开始菜单点击 *Anaconda PowerShell Prompt*  
+        4. 查询安装信息  
             `conda info`  
-        3. 查看当前存在的内核目录  
+        5. 查看当前存在的内核目录  
             `jupyter-kernelspec list`
-        4. 查看当前存在哪些环境  
+        6. 查看当前存在哪些环境  
             `conda env list`  
-        5. 创建新的虚拟环境  
+        7. 创建新的虚拟环境  
             `conda create -n env_name python=python_version`  
             `举例：conda create -n Python2.7.18 python=2.7.18`
-        6. 激活新的虚拟环境  
+        8. 激活新的虚拟环境  
             `conda activate Python2.7.18`
-        7. 换源
+        9. 换源
             ```
             中科大源：
             conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
@@ -102,24 +108,24 @@
             conda config --set show_channel_urls yes
             ```  
             > `conda config --set show_channel_urls yes` 命令的作用是告诉用户当前下载使用的源  
-        8. 查看已安装的源  
+        10. 查看已安装的源  
             `conda config --show`
-        9.  安装 *ipykernel*  
+        11. 安装 *ipykernel*  
             `conda install ipykernel`
-        10. 修改编码  
+        12. 修改编码  
             `chcp 1252`
-        11. 安装Python2内核需降低tornado版本  
+        13. 安装Python2内核需降低tornado版本  
             `conda install tornado=4.5`
-        12. 写入 *Python2* 内核  
+        14. 写入 *Python2* 内核  
             `python -m ipykernel install --name env_name --display-name "display_name"`
-        13. 换回默认源  
+        15. 换回默认源  
             `conda config --remove-key channels`
-        14. 删除虚拟环境  
+        16. 删除虚拟环境  
             `conda remove -n your_env_name --all`
-        15. 查询已安装的包  
+        17. 查询已安装的包  
             `conda list`
     * ### 常见报错  
-        16. *Conda SSL Error*  
+        18. *Conda SSL Error*  
             > 报错信息：*Conda SSL Error: OpenSSL appears to be unavailable on this machine. OpenSSL is required to download*  
                 
             原因：DLL文件缺失错误导致  
@@ -127,13 +133,13 @@
             * 复制dll文件：`libcrypto-1_1-x64.dll`，`libssl-1_1-x64.dll`  
             路径：`%anaconda_path%\Library\bin` --> `%anaconda_path%\DLLs`  
             * 重启  
-        17. *LookupError*  
+        19. *LookupError*  
             > 报错信息：*LookupError: unknown encoding: cp65001*  
 
             原因：编码错误  
             解决方法：  
             * 运行：`chcp 1252`
-        18. *AttributeError*
+        20. *AttributeError*
             > 报错信息：*AttributeError: type object 'IOLoop' has no attribute 'initialized'*  
 
             原因：Tornado版本过高，与Python2不匹配  
