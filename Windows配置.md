@@ -145,3 +145,17 @@
             原因：Tornado版本过高，与Python2不匹配  
             解决方法：  
             * 运行：`conda install tornado=4.5`
+***
+
+* ## 修改资源管理器盘符图标  
+    > 使用注册表修改方法修改盘符图标  
+
+    1.打开注册表编辑器  
+    `Win+R: regedit`  
+    2.路径  
+    `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons`  
+    3.新建项，名称为盘符，例如 `C`  
+    4.在盘符下新建项，名称为 `DefaultIcon`  
+    5.将 `DefaultIcon` 项的值设为icon路径
+***
+
