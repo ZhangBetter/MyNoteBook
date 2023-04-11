@@ -14,6 +14,7 @@
   - [安装 lolcat](#安装-lolcat)
   - [设置开机自启（开机显示欢迎界面）](#设置开机自启开机显示欢迎界面)
   - [安装 powerlevel10k 主题](#安装-powerlevel10k-主题)
+  - [启用 systemctl](#启用-systemctl)
 
 
 # 安装 WS 并升级版本为 WSL2  
@@ -141,3 +142,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting pip)
 
 source ~/.zshrc             #生效
 ```
+## 启用 systemctl 
+> wsl2 商店安装的 Ubuntu 已默认支持 systemctl，但手动安装的 CentOS 还不支持，因此需要手动替换 systemctl 文件
+* 下载地址
+[链接](https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl.py)
+* 将下载的文件替换 `/usr/bin/systemctl`
