@@ -1,10 +1,22 @@
+<!--
+ * @Author          : ZheZhang
+ * @CreateDate      : 2023-03-27 09:08:58
+ * @LastEditors     : ZhangBetter
+ * @LastEditorsEmail: zhangzhenumberone@gmail.com
+ * @LastEditTime    : 2023-04-12 17:31:41
+ * @Description     : 著作权保护，转载请注明出处！
+ * Copyright (c) 2023 by ZhangBetter Email: zhangzhenumberone@gmail.com, All Rights Reserved.
+-->
+
 # Docker 学习笔记
-> **本片笔记主要记录 docker 学习过程**
+> **本片笔记主要记录 docker 学习过程**  
 
 - [Docker 学习笔记](#docker-学习笔记)
 - [在 WSL2 中安装 docker](#在-wsl2-中安装-docker)
   - [首先需要安装配置好 WSL2](#首先需要安装配置好-wsl2)
   - [安装步骤](#安装步骤)
+- [常用命令](#常用命令)
+  - [帮助启动类](#帮助启动类)
 
 ***
 
@@ -52,3 +64,14 @@ docker version
 ```
 * 运行 Hello-World  
 `docker run hello-world`
+# 常用命令
+## 帮助启动类
+* 启动，停止，重启，状态  
+```
+systemctl start docker
+systemctl stop docker
+systemctl restart docker
+systemctl status docker
+```
+* 开机自启  
+`systemctl enable docker`
