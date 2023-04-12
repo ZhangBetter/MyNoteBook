@@ -1,8 +1,8 @@
 # 关于Linux常用命令  
 > **本篇笔记主要记录Linux系统下的常用命令**  
-- [关于Linux常用命令](#关于linux常用命令)
-  - [yum、apt-get、curl、wget和pip的使用](#yumapt-getcurlwget和pip的使用)
-  - [vim 常用命令](#vim-常用命令)
+* [关于Linux常用命令](#关于linux常用命令)
+  * [yum、apt-get、curl、wget和pip的使用](#yumapt-getcurlwget和pip的使用)
+  * [vim 常用命令](#vim-常用命令)
 
 ***  
 ## yum、apt-get、curl、wget和pip的使用
