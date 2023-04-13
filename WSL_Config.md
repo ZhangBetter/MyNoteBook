@@ -1,3 +1,13 @@
+<!--
+ * @Author          : ZheZhang
+ * @CreateDate      : 2023-04-03 09:41:46
+ * @LastEditors     : ZhangBetter
+ * @LastEditorsEmail: zhangzhenumberone@gmail.com
+ * @LastEditTime    : 2023-04-13 15:22:17
+ * @Description     : 著作权保护，转载请注明出处！
+ * Copyright (c) 2023 by ZhangBetter Email: zhangzhenumberone@gmail.com, All Rights Reserved.
+-->
+
 * [安装 WS 并升级版本为 WSL2](#安装-ws-并升级版本为-wsl2)
   * [启用 *适用于 Linux 的 Windows 子系统* 可选功能](#启用-适用于-linux-的-windows-子系统-可选功能)
   * [启用 *虚拟机平台* 可选功能](#启用-虚拟机平台-可选功能)

@@ -1,3 +1,13 @@
+<!--
+ * @Author          : ZheZhang
+ * @CreateDate      : 2023-03-22 14:46:23
+ * @LastEditors     : ZhangBetter
+ * @LastEditorsEmail: zhangzhenumberone@gmail.com
+ * @LastEditTime    : 2023-04-13 15:21:56
+ * @Description     : 著作权保护，转载请注明出处！
+ * Copyright (c) 2023 by ZhangBetter Email: zhangzhenumberone@gmail.com, All Rights Reserved.
+-->
+
 # 关于Linux常用命令  
 > **本篇笔记主要记录Linux系统下的常用命令**  
 * [关于Linux常用命令](#关于linux常用命令)
@@ -6,11 +16,9 @@
 
 ***  
 ## yum、apt-get、curl、wget和pip的使用
-
 > 常用的Linux系统分为两大类：  
 RedHat系列：Redhat、CentOS、Fedora等  
 Debian系列：Debian、Ubuntu等  
-
 1. `yum` 是RedHat系列默认的包管理工具  
     `yum [install,remove,update] 包名 `
 2. `apt` 是Debian系列默认的包管理工具  
@@ -18,7 +26,6 @@ Debian系列：Debian、Ubuntu等
 3. `pip` 是Python的包管理工具  
     `pip [install,uninstall] 包名 `
 4. `curl` 与 `wget` 都可以用来下载内容。  
-
     > `curl` 由于可自定义各种请求参数所以在模拟web请求方面更擅长；  
     `wget` 由于支持ftp和Recursive所以在下载文件方面更擅长。  
     `curl` 相当于浏览器，`wget` 相当于迅雷等专业下载工具。 
@@ -31,7 +38,6 @@ Debian系列：Debian、Ubuntu等
 ***
 
 ## vim 常用命令
-
 > vim 可能需要手动安装：`yum install vim`  
 本部分记录 vim 编辑器常用技巧和命令。  
 
@@ -39,17 +45,16 @@ Debian系列：Debian、Ubuntu等
     1. 命令模式：在该模式下是不能对文件直接编辑，可以输入快捷键进行一些操作（删除行，复制行，移动光标，粘贴等）  
     2. 编辑模式：在该模式下可以对文件的内容进行编辑  
     3. 末行模式：可以在末行输入命令对文件进行操作（搜索、替换、保存、退出、撤销、高亮）  
-
 1. 查找给定字符串  
-    ```
-    /str       #当前光标位置向后查询  
-    ?str       #当前光标位置向前查询
-    ```
+```
+/str       #当前光标位置向后查询  
+?str       #当前光标位置向前查询
+```
 2. 替换给定字符串  
-    格式 --> `:[range]s/str_0/str_1 `
-    ``` 
-    :1,$s/str_0/str_1       #其中 *$* 符号代表文件末尾
-    ```  
+格式 --> `:[range]s/str_0/str_1 `
+``` 
+:1,$s/str_0/str_1       #其中 *$* 符号代表文件末尾
+```  
 3. vim 缩进设置  
     * vim 有四种缩进方式：  
        * autoindent：跟随上一行缩进方式  
@@ -64,7 +69,7 @@ Debian系列：Debian、Ubuntu等
         :set shiftwidth=4       #设置自动缩进长度
         ```
 4. Tab 制表符设置  
-    `set tabstop=4`  
+`set tabstop=4`  
 5. 插入设置  
     | 命令 | 操作                   |
     | ---- | ---------------------- |
