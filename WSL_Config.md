@@ -47,11 +47,11 @@
 * [下载地址](https://github.com/mishamosher/CentOS-WSL/releases/download/7.9-2009/CentOS7.zip)
 * 解压下载的安装包
 * 右键以管理员身份运行 CentOS7.exe 等待安装成功
-```
-wsl --list                      #查看当前安装的子系统
-wsl --unregister [wsl_name]     #取消注册该子系统（相当于卸载）
-wsl --shutdown                  #关闭正在运行的子系统释放内存
-```
+  ```
+  wsl --list                      #查看当前安装的子系统
+  wsl --unregister [wsl_name]     #取消注册该子系统（相当于卸载）
+  wsl --shutdown                  #关闭正在运行的子系统释放内存
+  ```
 # WSL2 版本的 CentOS 初步配置
 ## 查看版本和内核
 ```
@@ -60,34 +60,34 @@ uname -r                        #查看内核
 ```
 ## yum 换源  
 * 备份默认源并切换为中科大源  
-```
-sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-         -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g' \
-         -i.bak \
-         /etc/yum.repos.d/CentOS-Base.repo
-```
+  ```
+  sudo sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+          -e 's|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g' \
+          -i.bak \
+          /etc/yum.repos.d/CentOS-Base.repo
+  ```
 * 重建缓存  
 `yum makecache`
 * 升级系统内核和软件包  
 `yum update`
 # 美化终端
 ## 安装第三方库（epel模块）
-```
-yum install epel-releasel           #安装
-yum list | grep epel-release        #查看版本
-```
+  ```
+  yum install epel-releasel           #安装
+  yum list | grep epel-release        #查看版本
+  ```
 ## 安装 figlet
 > figlet 可以将单词以特殊字体展示
-```
-yum install figlet              #安装
-figlet welcome                  #使用
-```
+  ```
+  yum install figlet              #安装
+  figlet welcome                  #使用
+  ```
 ## 安装 cowsay
 > cowsay 可以打印指定的动物并通过消息气泡展示文字内容
-```
-yum install cowsay              #安装
-cowsay -f stegosaurus welcome   #使用
-```
+  ```
+  yum install cowsay              #安装
+  cowsay -f stegosaurus welcome   #使用
+  ```
 ## 安装 lolcat
 > lolcat 可以将文字添加彩虹特效  
 由于 Lolcat 是一个 ruby gem 程序，所以在系统中必须安装有最新版本的 RUBY
@@ -104,21 +104,21 @@ cowsay -f stegosaurus welcome   #使用
 * 升级 Ruby Gems  
 `gem update --system`
 * 安装 lolcat
-```
-wget https://github.com/busyloop/lolcat/archive/master.zip          #下载lolcat
-unzip master.zip                                                    #解压
-cd lolcat-master/bin                                                #进入 bin 目录
-gem install lolcat                                                  #安装
-lolcat --version                                                    #查看版本
-```
+  ```
+  wget https://github.com/busyloop/lolcat/archive/master.zip          #下载lolcat
+  unzip master.zip                                                    #解压
+  cd lolcat-master/bin                                                #进入 bin 目录
+  gem install lolcat                                                  #安装
+  lolcat --version                                                    #查看版本
+  ```
 ## 设置开机自启（开机显示欢迎界面）
 * 新建脚本并放到 `/etc/profile.d/` 目录下  
 `vim /etc/profile.d/welcome.sh`
 * 编写启动脚本  
-```
-figlet welcome zhe | lolcat
-cat /etc/redhat-release | cowsay -f stegosaurus | lolcat
-```
+  ```
+  figlet welcome zhe | lolcat
+  cat /etc/redhat-release | cowsay -f stegosaurus | lolcat
+  ```
 ## 安装 powerlevel10k 主题
 * 点击链接下载 Cousine Nerd Font 字体，下载完解压安装  
 [字体下载链接](https://www.nerdfonts.com/font-downloads)
@@ -126,12 +126,12 @@ cat /etc/redhat-release | cowsay -f stegosaurus | lolcat
 * 安装 git  
 `yum install git`
 * 安装 5.1 版本的 zsh
-```
-curl http://mirror.ghettoforge.org/distributions/gf/el/7/plus/x86_64/zsh-5.1-1.gf.el7.x86_64.rpm > /root/zsh.rpm
-rpm -ivh /root/zsh.rpm
-echo $ZSH_VERSION
-rm -rf /root/zsh.rpm
-```
+  ```
+  curl http://mirror.ghettoforge.org/distributions/gf/el/7/plus/x86_64/zsh-5.1-1.gf.el7.x86_64.rpm > /root/zsh.rpm
+  rpm -ivh /root/zsh.rpm
+  echo $ZSH_VERSION
+  rm -rf /root/zsh.rpm
+  ```
 * 安装 oh-my-zsh  
 `sh -c "$(wget -O- https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"`
 * 下载 zsh 补全提示插件  
@@ -143,15 +143,15 @@ rm -rf /root/zsh.rpm
 * 下载 powerlevel10k  
 `git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 * 启用主题和插件  
-```
-vim ~/.zshrc
+  ```
+  vim ~/.zshrc
 
-#修改以下内容
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting pip)
+  #修改以下内容
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting pip)
 
-source ~/.zshrc             #生效
-```
+  source ~/.zshrc             #生效
+  ```
 ## 启用 systemctl 
 > wsl2 商店安装的 Ubuntu 已默认支持 systemctl，但手动安装的 CentOS 还不支持，因此需要手动替换 systemctl 文件
 * 下载地址
