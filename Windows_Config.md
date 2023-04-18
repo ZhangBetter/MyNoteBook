@@ -52,6 +52,12 @@
 `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\`
 3. 删除项  
 `{F0D63F85-37EC-4097-B30D-61B4A8917118}`
+### 百度网盘同步空间
+1. 打开注册表编辑器  
+`Winw+R: regedit`
+2. 路径  
+`计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace`
+3. 删除相关项
 ***
 ## 删除不必要的右键菜单
 > 此部分内容主要记录如何删除不必要的右键菜单
