@@ -89,7 +89,7 @@
 * 列出本地主机所有镜像  
   ```
   docker images [options]
-
+  
   options:
   -a:列出包含历史镜像在内的所有镜像
   -q:只显示镜像id
@@ -97,14 +97,14 @@
 * 搜索镜像
   ```
   docker search [options] [image_name]
-
+  
   options:
   --limit:限制列出镜像的数量，默认25个
   ```
 * 下载镜像  
   ```
   docker pull [image_name][:tag]
-
+  
   举例：
   docker pull ubuntu 等价于 docker pull ubuntu:latest
   ```
@@ -121,7 +121,7 @@
 * 新建/启动容器
   ```
   docker run [options] images [command] [argument]
-
+  
   options:
   --name="容器新名字"：为容器指定一个新名称
   -d:后台运行容器并返回容器id，即启动守护式容器（后台运行）
@@ -129,14 +129,14 @@
   -t:为容器重新分配一个伪终端，通常与 -i 一起使用
   -P:随机端口映射
   -p:指定端口映射
-
+  
   举例：
   docker run -it image_name /bin/bash
   ```
 * 列出当前正在运行的所有容器
   ```
   docker ps [options]
-
+  
   options:
   -a:包含历史运行过的容器
   -l:显示最近创建的容器
@@ -158,7 +158,7 @@
 * 删除已停止的容器
   ```
   docker rm 容器id
-
+  
   #一次性删除多个容器实例：
   docker rm -f $(docker ps -a -q)
   docekr ps -a -q | xargs docker rm
@@ -168,7 +168,7 @@
 
   ```
   docker run -d 容器名
-
+  
   举例：
   docker run -d redis:6.0.8
   ```
@@ -182,11 +182,11 @@
   ```
   docker exec -it 容器id /bin/bash
   docker attach 容器id
-
+  
   区别：
   attach 直接进入容器启动命令的终端，不会启动新的进程，用exit退出，会导致容器的停止。
   exec 是在容器中打开新的终端，并且可以启动新的进程，用exit退出，不会导致容器的停止。
-
+  
   举例：
   # 进入redis服务：
   docker exec -it 容器id /bin/bash
